@@ -24,7 +24,7 @@ classdef USTCDAC < handle
         da_range = 0.8;         %最大电压，未使用
         gain = zeros(1,4);      %通道增益
         offset = zeros(1,4);    %通道偏置
-        default_volt = ones(1,4)*32768; % 关闭DAC电压
+        default_volt = ones(1,4)*33270; % 关闭DAC电压
         
         trig_sel = 0;           %触发源选择
         trig_interval = 200e-6; %主板连续触发输出时间间隔

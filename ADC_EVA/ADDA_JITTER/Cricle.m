@@ -1,6 +1,6 @@
-da = USTCDAC('10.0.2.9',80);
+da = USTCDAC('10.0.2.7',80);
 ad = USTCADC(1);
-ad.set('mac','1C-1B-0D-38-3F-FB');
+ad.set('mac','FF-FF-FF-FF-FF-FF');
 da.Open()
 ad.Open();
 

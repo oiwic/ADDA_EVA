@@ -1,17 +1,16 @@
-da = USTCDAC('10.0.2.11',80);
+da = USTCDAC('10.0.2.7',80);
 ad = USTCADC(1);
-ad.set('mac','1C-1B-0D-38-3F-FB');
+ad.set('mac','FF-FF-FF-FF-FF-FF');
 da.Open()
 ad.Open();
 
-phase_count = 100; %扫描相位点个数
+phase_count = 100;  %扫描相位点个数
 trig_count = 1000;  %每次触发个数
-amplitude = 1000;  %波形幅度
+amplitude = 1000;   %波形幅度
 offset = 32767;     %波形偏置电压
 period = 20;        %100MHz
 period_count = 1000;%输出10us的波形
 sample_depth = 5000;%采样点个数
-
 
 ad.SetMode(1);
 ad.SetWindowStart(8);
@@ -49,3 +48,5 @@ for k = 1:phase_count
     scatter(data(1:k,1),data(1:k,2))
     pause(0.02);
 end
+ad.Close();
+da.Close();
