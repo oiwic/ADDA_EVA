@@ -20,27 +20,29 @@ function [SINAD,SNR,SFDR,THD,ENOB] = analysis(data,sample_rate)
         THD(k)   = 10*log10(power_signal/sum(peak));
         ENOB(k)  = (SINAD(k) - 1.76)/6.02;
     end
-    figure(1)
+    figure()
+    set(gcf, 'position', [400 120 1200 800]);
+    subplot(2,3,1);
     histogram(SINAD);
     title(['SINAD','  AVG = ',num2str(mean(SINAD)),'  SIGMA = ',num2str(std(SINAD))]);
     xlabel('db');
     ylabel('count');
-    figure(2)
+    subplot(2,3,2);
     histogram(SNR);
     title(['SNR','  AVG = ',num2str(mean(SNR)),'  SIGMA = ',num2str(std(SNR))]);
     xlabel('db');
     ylabel('count');
-    figure(3)
+    subplot(2,3,3);
     histogram(SFDR);
     title(['SFDR','  AVG = ',num2str(mean(SFDR)),'  SIGMA = ',num2str(std(SFDR))]);
     xlabel('dbc');
     ylabel('count');
-    figure(4)
+    subplot(2,3,4);
     histogram(THD);
     title(['THD','  AVG = ',num2str(mean(THD)),'  SIGMA = ',num2str(std(THD))]);
     xlabel('db');
     ylabel('count');
-    figure(5)
+    subplot(2,3,5);
     histogram(ENOB);
     title(['ENOB','  AVG = ',num2str(mean(ENOB)),'  SIGMA = ',num2str(std(ENOB))]);
     xlabel('ÓÐÐ§Î»');
